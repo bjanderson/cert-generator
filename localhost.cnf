@@ -1,0 +1,28 @@
+# localhost.cnf
+
+# CHANGE encrypt_key = yes if you want to add a password to your certificate
+[ req ]
+distinguished_name = server_distinguished_name
+encrypt_key = no
+prompt = no
+req_extensions = v3_req
+
+
+[ server_distinguished_name ]
+commonName = localhost
+countryName = US
+stateOrProvinceName = Deleware
+emailAddress = web@dev.tld
+organizationName = 000_WEB_DEV
+organizationalUnitName = Development
+
+
+[ v3_req ]
+basicConstraints = CA:FALSE
+keyUsage = nonRepudiation, digitalSignature, keyEncipherment
+subjectAltName = @alt_names
+
+
+[ alt_names ]
+DNS.0 = localhost
+DNS.1 = dev.local

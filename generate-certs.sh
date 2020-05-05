@@ -27,6 +27,8 @@ USER_CSR=certs/user.csr
 USER_KEY=certs/user.key
 USER_P12=certs/user.p12
 
+DH_STRONG=dh-strong.pem
+
 V3_EXT=v3.ext
 KEY_BITS=2048
 VALID_DAYS=360
@@ -76,6 +78,15 @@ openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:$KEY_BITS -out $USER_KEY
 openssl req -new -key $USER_KEY -subj "/CN=$CN/O=$ORG/UID=$USER_ID" -out $USER_CSR
 openssl x509 -days $VALID_DAYS -req -in $USER_CSR -CAcreateserial -CA $CA_CRT -CAkey $CA_KEY -out $USER_CRT -extfile $V3_EXT
 openssl pkcs12 -in $USER_CRT -inkey $USER_KEY -export -password pass:$P12_PASSWORD -out $USER_P12
+echo "Done."
+
+##################################
+# DH STRONG
+##################################
+
+echo
+echo "Creating Diffie-Hellman strong key..."
+openssl dhparam -out $DH_STRONG 2048
 echo "Done."
 
 echo
