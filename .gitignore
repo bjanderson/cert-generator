@@ -3,5 +3,6 @@
 *.csr
 *.key
 *.p12
-*.srl
+*.pem
 *.pub
+*.srl

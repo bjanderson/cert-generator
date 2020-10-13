@@ -27,7 +27,7 @@ USER_CSR=certs/user.csr
 USER_KEY=certs/user.key
 USER_P12=certs/user.p12
 
-DH_STRONG=dh-strong.pem
+DH_STRONG=certs/dh-strong.pem
 
 V3_EXT=v3.ext
 KEY_BITS=2048
