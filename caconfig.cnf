@@ -2,15 +2,18 @@
 # openssl: https://github.com/openssl/openssl#documentation
 # based on: https://gist.github.com/jchandra74/36d5f8d0e11960dd8f80260801109ab0
 
+[ default ]
+ca = local_ca
+dir = ./certs
+
 [ ca ]
-default_ca = local_ca
+default_ca = $ca
 
 
 # Default location of directories and files needed to generate certificates.
 # CHANGE the dir variable to the directory where you want your certs to be generated.
 #
 [ local_ca ]
-dir = /your/home/directory/certs
 certificate = $dir/cacert.pem
 database = $dir/index.txt
 new_certs_dir = $dir
@@ -48,7 +51,7 @@ basicConstraints = CA:false
 #
 [ req ]
 default_bits = 2048
-default_keyfile = /your/home/directory/certs/cakey.pem
+default_keyfile = $dir/cakey.pem
 default_md = sha256
 prompt = no
 distinguished_name = root_ca_distinguished_name

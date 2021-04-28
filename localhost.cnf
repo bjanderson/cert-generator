@@ -2,6 +2,8 @@
 
 # CHANGE encrypt_key = yes if you want to add a password to your certificate
 [ req ]
+default_bits = 2048
+default_md = sha256
 distinguished_name = server_distinguished_name
 encrypt_key = no
 prompt = no

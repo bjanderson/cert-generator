@@ -6,3 +6,4 @@
 *.pem
 *.pub
 *.srl
+certs/*
