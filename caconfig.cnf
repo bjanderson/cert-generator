@@ -53,10 +53,10 @@ basicConstraints = CA:false
 default_bits = 2048
 default_keyfile = $dir/cakey.pem
 default_md = sha256
+encrypt_key = no
 prompt = no
 distinguished_name = root_ca_distinguished_name
 x509_extensions = root_ca_extensions
-encrypt_key = no
 
 
 # Root Certificate Authority distinguished name

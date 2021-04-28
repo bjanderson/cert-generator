@@ -16,3 +16,7 @@ or
     ./generate-jwt-keys.sh
 
 respectively.
+
+-----
+
+Note: generate-certificates-from-configs.sh is experimental and probably won't work for you.
